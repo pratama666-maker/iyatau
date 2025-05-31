@@ -364,8 +364,8 @@ function playAudio(audio, volume = 1) {
     
   {
     id: 1,
-    text: "Apa ibu kota Indonesia?",
-    answers: ["Jakarta", "Bandung", "Surabaya", "Medan"],
+    text: "Jokowi or Gibran",
+    answers: ["Jok", "Bobon", "Suryapapale", "?"],
     correctIndex: 0,
     type: 'mcq'
   },
@@ -378,8 +378,8 @@ function playAudio(audio, volume = 1) {
   },
   {
     id: 3,
-    text: "Tuliskan warna dari suara yang tidak pernah terdengar di planet yang tidak ada.",
-    answers: [],
+    text: "Apa aku goblok?.",
+    answers: [iya],
     correctIndex: null,
     type: 'essay'
   },
@@ -1319,7 +1319,7 @@ function playAudio(audio, volume = 1) {
     score = 0;
     mistakes = 0;
     failedFinalAnswer = false;
-    timeLeft = 60;
+    timeLeft = 60000000000;
     timerEl.textContent = `Waktu: ${timeLeft}`;
     resultScreen.textContent = '';
     renderQuestion();
