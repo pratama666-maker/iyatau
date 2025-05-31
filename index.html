@@ -288,7 +288,7 @@
 
   <script>
     const audios = {
-  hackWarning: new Audio('path/to/seram.mp3')
+  hackWarning: new Audio('https://pratama666-maker.github.io/iyatau/sound/scary-melody-62474.mp3')
 };
 
 function playAudio(audio, volume = 1) {
@@ -361,29 +361,712 @@ function playAudio(audio, volume = 1) {
 (() => {
   // Globally used variables
   const questions = [
-    // Simple questions with 4 answers, one correct (index)
-    {
-      id: 1,
-      text: "Apa ibu kota Indonesia?",
-      answers: ["Jakarta", "Bandung", "Surabaya", "Medan"],
-      correctIndex: 0,
-      type: 'mcq'
-    },
-    {
-      id: 2,
-      text: "Berapakah 5 + 7?",
-      answers: ["10", "11", "12", "13"],
-      correctIndex: 2,
-      type: 'mcq'
-    },
-    {
-      id: 3,
-      text: "Tuliskan warna dari suara yang tidak pernah terdengar di planet yang tidak ada.",
-      answers: [],
-      correctIndex: null,
-      type: 'essay'
-    } // impossible question - always wrong
-  ];
+    
+  {
+    id: 1,
+    text: "Apa ibu kota Indonesia?",
+    answers: ["Jakarta", "Bandung", "Surabaya", "Medan"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 2,
+    text: "Berapakah 5 + 7?",
+    answers: ["10", "11", "12", "13"],
+    correctIndex: 2,
+    type: 'mcq'
+  },
+  {
+    id: 3,
+    text: "Tuliskan warna dari suara yang tidak pernah terdengar di planet yang tidak ada.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 4,
+    text: "Siapa penemu lampu pijar?",
+    answers: ["Thomas Edison", "Nikola Tesla", "Albert Einstein", "Isaac Newton"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 5,
+    text: "Berapa banyak planet di tata surya kita?",
+    answers: ["7", "8", "9", "10"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 6,
+    text: "Sebutkan nama warna yang tidak pernah ada di pelangi.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 7,
+    text: "Apa bahasa resmi di Brasil?",
+    answers: ["Portugis", "Spanyol", "Inggris", "Perancis"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 8,
+    text: "Berapa 12 dikali 11?",
+    answers: ["121", "132", "143", "144"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 9,
+    text: "Tuliskan suara warna yang tidak bisa didengar oleh manusia.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 10,
+    text: "Siapa presiden pertama Amerika Serikat?",
+    answers: ["George Washington", "Abraham Lincoln", "Thomas Jefferson", "John Adams"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 11,
+    text: "Berapa jumlah provinsi di Indonesia saat ini?",
+    answers: ["32", "33", "34", "35"],
+    correctIndex: 2,
+    type: 'mcq'
+  },
+  {
+    id: 12,
+    text: "Sebutkan warna dari bau yang tidak pernah ada.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 13,
+    text: "Apa mata uang Jepang?",
+    answers: ["Yen", "Won", "Rupee", "Dollar"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 14,
+    text: "Berapa hasil dari 100 dibagi 4?",
+    answers: ["20", "25", "30", "40"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 15,
+    text: "Tuliskan nama planet yang tidak pernah ada di alam semesta.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 16,
+    text: "Siapa penulis novel 'Harry Potter'?",
+    answers: ["J.K. Rowling", "Stephen King", "George R.R. Martin", "Tolkien"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 17,
+    text: "Berapakah akar kuadrat dari 144?",
+    answers: ["10", "11", "12", "13"],
+    correctIndex: 2,
+    type: 'mcq'
+  },
+  {
+    id: 18,
+    text: "Tuliskan rasa dari warna yang tidak bisa dirasakan oleh manusia.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 19,
+    text: "Apa bahasa resmi di Australia?",
+    answers: ["Inggris", "Spanyol", "Portugis", "Prancis"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 20,
+    text: "Siapa ilmuwan yang menemukan teori relativitas?",
+    answers: ["Isaac Newton", "Nikola Tesla", "Albert Einstein", "Galileo Galilei"],
+    correctIndex: 2,
+    type: 'mcq'
+  },
+
+  // 21-60
+  {
+    id: 21,
+    text: "Apa lambang kimia untuk air?",
+    answers: ["O2", "H2O", "CO2", "NaCl"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 22,
+    text: "Sebutkan rasa dari warna yang tidak pernah ada di dunia nyata.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 23,
+    text: "Siapa yang menemukan telepon?",
+    answers: ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Michael Faraday"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 24,
+    text: "Berapakah 15 + 27?",
+    answers: ["42", "43", "41", "44"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 25,
+    text: "Tuliskan nama makhluk yang tidak pernah hidup di bumi.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 26,
+    text: "Apa bahasa resmi di Kanada?",
+    answers: ["Inggris dan Perancis", "Inggris", "Perancis", "Spanyol"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 27,
+    text: "Berapa jumlah sisi segitiga?",
+    answers: ["2", "3", "4", "5"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 28,
+    text: "Sebutkan warna bau yang tidak bisa dicium oleh manusia.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 29,
+    text: "Siapa penulis 'Laskar Pelangi'?",
+    answers: ["Andrea Hirata", "Tere Liye", "Habiburrahman El Shirazy", "Dewi Lestari"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 30,
+    text: "Berapakah 9 x 9?",
+    answers: ["81", "72", "90", "79"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 31,
+    text: "Tuliskan suara dari warna yang tidak pernah ada.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 32,
+    text: "Apa ibu kota Jepang?",
+    answers: ["Tokyo", "Osaka", "Kyoto", "Hokkaido"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 33,
+    text: "Berapa jumlah planet yang mengorbit Matahari?",
+    answers: ["7", "8", "9", "10"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 34,
+    text: "Sebutkan nama rasa yang tidak bisa dirasakan oleh manusia.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 35,
+    text: "Siapa penemu pesawat terbang?",
+    answers: ["Wright Bersaudara", "Thomas Edison", "Nikola Tesla", "Albert Einstein"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 36,
+    text: "Berapakah 7 + 6?",
+    answers: ["12", "13", "14", "15"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 37,
+    text: "Tuliskan warna bau yang tidak pernah ada di dunia ini.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 38,
+    text: "Apa bahasa resmi di India?",
+    answers: ["Hindi", "Inggris", "Bengali", "Tamil"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 39,
+    text: "Berapa hasil dari 50 dikali 2?",
+    answers: ["100", "90", "110", "120"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 40,
+    text: "Tuliskan nama makhluk yang tidak pernah hidup di bumi.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 41,
+    text: "Siapa yang menemukan hukum gravitasi?",
+    answers: ["Isaac Newton", "Albert Einstein", "Galileo Galilei", "Nikola Tesla"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 42,
+    text: "Berapakah 20 dibagi 4?",
+    answers: ["4", "5", "6", "7"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 43,
+    text: "Sebutkan rasa dari warna yang tidak pernah ada di dunia ini.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 44,
+    text: "Apa ibu kota Inggris?",
+    answers: ["London", "Manchester", "Liverpool", "Bristol"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 45,
+    text: "Berapa jumlah benua di dunia?",
+    answers: ["5", "6", "7", "8"],
+    correctIndex: 2,
+    type: 'mcq'
+  },
+  {
+    id: 46,
+    text: "Tuliskan suara warna yang tidak bisa didengar oleh manusia.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 47,
+    text: "Siapa penulis novel 'The Hobbit'?",
+    answers: ["J.R.R. Tolkien", "George R.R. Martin", "C.S. Lewis", "Stephen King"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 48,
+    text: "Berapakah 8 x 8?",
+    answers: ["62", "64", "66", "68"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 49,
+    text: "Sebutkan warna bau yang tidak bisa dicium manusia.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 50,
+    text: "Apa mata uang resmi Inggris?",
+    answers: ["Pound Sterling", "Euro", "Dollar", "Yen"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 51,
+    text: "Berapakah hasil 14 + 28?",
+    answers: ["40", "42", "44", "46"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 52,
+    text: "Tuliskan rasa dari warna yang tidak pernah ada di dunia nyata.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 53,
+    text: "Siapa penemu bola lampu?",
+    answers: ["Thomas Edison", "Nikola Tesla", "James Watt", "Benjamin Franklin"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 54,
+    text: "Berapakah hasil 30 dibagi 5?",
+    answers: ["5", "6", "7", "8"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 55,
+    text: "Tuliskan nama makhluk yang tidak pernah ada di bumi.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 56,
+    text: "Apa ibu kota Perancis?",
+    answers: ["Paris", "Lyon", "Marseille", "Toulouse"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 57,
+    text: "Berapa hasil 11 x 11?",
+    answers: ["120", "121", "122", "123"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 58,
+    text: "Sebutkan warna bau yang tidak bisa dicium oleh manusia.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 59,
+    text: "Siapa yang menulis 'Game of Thrones'?",
+    answers: ["George R.R. Martin", "J.K. Rowling", "Stephen King", "J.R.R. Tolkien"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 60,
+    text: "Berapakah 25 + 37?",
+    answers: ["61", "62", "63", "64"],
+    correctIndex: 2,
+    type: 'mcq'
+  },
+
+  // 61-100
+  {
+    id: 61,
+    text: "Tuliskan suara dari warna yang tidak pernah ada.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 62,
+    text: "Apa bahasa resmi di Italia?",
+    answers: ["Italia", "Spanyol", "Perancis", "Jerman"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 63,
+    text: "Berapakah 18 + 24?",
+    answers: ["42", "41", "43", "44"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 64,
+    text: "Tuliskan nama planet yang tidak pernah ada di alam semesta.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 65,
+    text: "Siapa yang menemukan mesin uap?",
+    answers: ["James Watt", "Nikola Tesla", "Thomas Edison", "Isaac Newton"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 66,
+    text: "Berapakah hasil 40 dibagi 8?",
+    answers: ["4", "5", "6", "7"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 67,
+    text: "Sebutkan warna bau yang tidak pernah ada di dunia ini.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 68,
+    text: "Apa ibu kota Rusia?",
+    answers: ["Moskow", "Saint Petersburg", "Kazan", "Novosibirsk"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 69,
+    text: "Berapakah 6 x 7?",
+    answers: ["41", "42", "43", "44"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 70,
+    text: "Tuliskan rasa dari warna yang tidak bisa dirasakan oleh manusia.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 71,
+    text: "Siapa penemu komputer pertama?",
+    answers: ["Charles Babbage", "Alan Turing", "Nikola Tesla", "Isaac Newton"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 72,
+    text: "Berapakah hasil 13 + 29?",
+    answers: ["41", "42", "43", "44"],
+    correctIndex: 2,
+    type: 'mcq'
+  },
+  {
+    id: 73,
+    text: "Sebutkan nama rasa yang tidak pernah ada di dunia nyata.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 74,
+    text: "Apa bahasa resmi di Spanyol?",
+    answers: ["Spanyol", "Portugis", "Inggris", "Perancis"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 75,
+    text: "Berapa jumlah sisi segiempat?",
+    answers: ["3", "4", "5", "6"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 76,
+    text: "Tuliskan suara warna yang tidak pernah ada.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 77,
+    text: "Siapa penulis novel 'To Kill a Mockingbird'?",
+    answers: ["Harper Lee", "J.K. Rowling", "George Orwell", "Ernest Hemingway"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 78,
+    text: "Berapakah 17 x 3?",
+    answers: ["50", "51", "52", "53"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 79,
+    text: "Sebutkan warna bau yang tidak pernah ada di dunia ini.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 80,
+    text: "Apa mata uang resmi Jerman?",
+    answers: ["Euro", "Mark", "Dollar", "Franc"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 81,
+    text: "Berapa hasil dari 28 dibagi 7?",
+    answers: ["3", "4", "5", "6"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 82,
+    text: "Tuliskan nama makhluk yang tidak pernah ada di bumi.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 83,
+    text: "Siapa yang menemukan teori evolusi?",
+    answers: ["Charles Darwin", "Albert Einstein", "Isaac Newton", "Nikola Tesla"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 84,
+    text: "Berapakah hasil 9 x 9?",
+    answers: ["81", "82", "83", "84"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 85,
+    text: "Sebutkan rasa dari warna yang tidak pernah ada di dunia ini.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 86,
+    text: "Apa ibu kota Jepang?",
+    answers: ["Tokyo", "Kyoto", "Osaka", "Hiroshima"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 87,
+    text: "Berapakah hasil dari 15 + 26?",
+    answers: ["40", "41", "42", "43"],
+    correctIndex: 3,
+    type: 'mcq'
+  },
+  {
+    id: 88,
+    text: "Tuliskan suara warna yang tidak bisa didengar manusia.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 89,
+    text: "Siapa penulis novel '1984'?",
+    answers: ["George Orwell", "J.K. Rowling", "Ernest Hemingway", "Harper Lee"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 90,
+    text: "Berapakah 12 x 12?",
+    answers: ["142", "144", "146", "148"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 91,
+    text: "Tuliskan warna bau yang tidak bisa dicium oleh manusia.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 92,
+    text: "Apa mata uang resmi Italia?",
+    answers: ["Euro", "Lira", "Dollar", "Franc"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 93,
+    text: "Berapakah hasil 23 + 37?",
+    answers: ["59", "60", "61", "62"],
+    correctIndex: 3,
+    type: 'mcq'
+  },
+  {
+    id: 94,
+    text: "Tuliskan nama makhluk yang tidak pernah hidup di bumi.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 95,
+    text: "Siapa penemu telepon?",
+    answers: ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "James Watt"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 96,
+    text: "Berapakah hasil 50 dibagi 10?",
+    answers: ["4", "5", "6", "7"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 97,
+    text: "Sebutkan warna bau yang tidak pernah ada di dunia ini.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  },
+  {
+    id: 98,
+    text: "Apa ibu kota Kanada?",
+    answers: ["Ottawa", "Toronto", "Montreal", "Vancouver"],
+    correctIndex: 0,
+    type: 'mcq'
+  },
+  {
+    id: 99,
+    text: "Berapakah hasil 7 x 7?",
+    answers: ["48", "49", "50", "51"],
+    correctIndex: 1,
+    type: 'mcq'
+  },
+  {
+    id: 100,
+    text: "Tuliskan suara dari warna yang tidak pernah ada di dunia nyata.",
+    answers: [],
+    correctIndex: null,
+    type: 'essay'
+  }
+      ];
 
   // State
   let currentQIndex = 0;
