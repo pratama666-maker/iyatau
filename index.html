@@ -1,164 +1,273 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google Palsu Jump Scare</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      background-color: #fff;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .google-logo {
-      max-width: 80%;
-      height: auto;
-      margin-bottom: 25px;
-    }
-
-    .search-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-width: 584px;
-    }
-
-    .search-box {
-      width: 100%;
-      height: 44px;
-      border: 1px solid #dfe1e5;
-      border-radius: 24px;
-      padding: 0 20px;
-      font-size: 16px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.12);
-      outline: none;
-      transition: box-shadow 0.3s ease;
-      box-sizing: border-box;
-    }
-
-    .search-box:focus {
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2), 0 6px 20px rgba(0,0,0,0.19);
-    }
-
-    .buttons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      background-color: #f8f9fa;
-      border: 1px solid #f8f8f8;
-      border-radius: 4px;
-      color: #3c4043;
-      font-size: 14px;
-      margin: 10px 5px;
-      padding: 0 16px;
-      line-height: 27px;
-      height: 36px;
-      min-width: 54px;
-      text-align: center;
-      cursor: pointer;
-      user-select: none;
-      outline: none;
-    }
-
-    .button:hover {
-      box-shadow: 0 1px 1px rgba(0,0,0,.1);
-      background-color: #f0f0f0;
-      border: 1px solid #dadce0;
-    }
-
-    #result-display {
-      margin-top: 40px;
-      font-size: 18px;
-      color: #333;
-      text-align: center;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* Jump scare full screen */
-    #jumpscare {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-image: url('https://pratama666-maker.github.io/iyatau/images%20(30).jpeg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: black;
-      z-index: 9999;
-      display: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kejutan Spesial untuk Ayana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            overflow: hidden;
+            touch-action: none;
+        }
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+        }
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        #letter-container {
+            font-family: 'Dancing Script', cursive;
+            background: rgba(255, 240, 245, 0.95);
+            color: #583c3c;
+            border: 2px solid #ff8fab;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            max-width: 90%;
+            width: 500px;
+        }
+        .letter-hidden {
+            opacity: 0;
+            transform: scale(0.8) translateY(50px);
+            pointer-events: none;
+        }
+        .letter-visible {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+        #instruction {
+            font-family: 'Playfair Display', serif;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            transition: opacity 0.5s;
+        }
+    </style>
 </head>
-<body>
-  <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo" class="google-logo">
-  <div class="search-container">
-    <input type="text" id="searchInput" class="search-box" placeholder="Cari apa saja...">
-    <div class="buttons">
-      <button class="button" id="searchButton">Penelusuran Google</button>
-      <button class="button" id="luckyButton">Saya Lagi Beruntung</button>
+<body class="bg-gradient-to-br from-rose-100 to-pink-200 flex items-center justify-center h-screen m-0">
+
+    <!-- Container for the 3D Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- The Love Letter -->
+    <div id="letter-container" class="letter-hidden p-8 rounded-lg text-center absolute z-10">
+        <h2 class="text-4xl md:text-5xl text-rose-500 mb-6">Untuk Ayana Tercinta,</h2>
+        <p class="text-xl md:text-2xl leading-relaxed">
+            Dari sekian banyak bintang di langit, mataku hanya tertuju padamu.
+            Kamu adalah melodi terindah dalam simfoni hidupku.
+            Setiap detik bersamamu adalah anugerah yang tak ternilai.
+            Terima kasih telah menjadi cahayaku.
+        </p>
+        <p class="text-2xl md:text-3xl mt-8 font-bold text-rose-600">Aku Sayang Kamu Selalu.</p>
+        <button id="close-letter" class="mt-8 bg-rose-400 text-white py-2 px-6 rounded-full hover:bg-rose-500 transition-colors duration-300 shadow-lg">Tutup</button>
     </div>
-  </div>
-  <div id="result-display"></div>
 
-  <!-- Jump Scare -->
-  <div id="jumpscare">
-    <audio id="scream" src="https://www.myinstants.com/media/sounds/movie_1.mp3"></audio>
-  </div>
+    <!-- Initial Instruction -->
+    <div id="instruction" class="absolute bottom-10 text-center text-gray-600 text-lg z-20 px-4">
+        <p>Klik dan seret untuk memutar kado. Klik pada tutupnya untuk membuka.</p>
+    </div>
 
-  <script>
-    document.getElementById('searchButton').addEventListener('click', performSearch);
-    document.getElementById('luckyButton').addEventListener('click', performSearch);
-    document.getElementById('searchInput').addEventListener('keypress', function(event) {
-      if (event.key === 'Enter') {
-        performSearch();
-      }
-    });
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
-    function performSearch() {
-      const query = document.getElementById('searchInput').value.trim();
-      const resultDisplay = document.getElementById('result-display');
+    <script>
+        // --- Basic Setup ---
+        const canvasContainer = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 
-      if (query !== '') {
-        resultDisplay.textContent = `Anda mencari: "${query}". Ini adalah hasil sederhana.`;
-        resultDisplay.style.color = '#1a0dab';
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        canvasContainer.appendChild(renderer.domElement);
 
-        // Tunda jump scare selama 1 detik
-        setTimeout(() => {
-          showJumpScare();
-        }, 1000);
-      } else {
-        resultDisplay.textContent = 'Silakan masukkan sesuatu untuk dicari.';
-        resultDisplay.style.color = '#d93025';
-      }
-    }
+        camera.position.z = 5;
 
-    function showJumpScare() {
-      const jumpscare = document.getElementById('jumpscare');
-      const scream = document.getElementById('scream');
-      jumpscare.style.display = 'block';
-      scream.play();
+        // --- Lighting ---
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+        scene.add(ambientLight);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(5, 10, 7.5);
+        scene.add(directionalLight);
 
-      // Hilangkan jump scare setelah 3 detik
-      setTimeout(() => {
-        jumpscare.style.display = 'none';
-      }, 3000);
-    }
-  </script>
+        // --- Materials & Textures ---
+        const boxMaterial = new THREE.MeshStandardMaterial({
+            color: 0xff8fab, // Pink color for the box
+            roughness: 0.4,
+            metalness: 0.1
+        });
+        const ribbonMaterial = new THREE.MeshStandardMaterial({
+            color: 0xffd700, // Gold color for the ribbon
+            roughness: 0.3,
+            metalness: 0.5
+        });
+
+        // --- Gift Box Group ---
+        const giftGroup = new THREE.Group();
+        scene.add(giftGroup);
+        
+        // --- Box Base ---
+        const boxGeometry = new THREE.BoxGeometry(2, 2, 2);
+        const box = new THREE.Mesh(boxGeometry, boxMaterial);
+        giftGroup.add(box);
+
+        // --- Box Lid ---
+        const lidGeometry = new THREE.BoxGeometry(2.1, 0.4, 2.1);
+        const lid = new THREE.Mesh(lidGeometry, boxMaterial);
+        lid.position.y = 1.2;
+        giftGroup.add(lid);
+        
+        // --- Ribbon ---
+        // Vertical ribbon
+        const verticalRibbonGeometry = new THREE.BoxGeometry(2.15, 0.45, 0.5);
+        const verticalRibbon = new THREE.Mesh(verticalRibbonGeometry, ribbonMaterial);
+        lid.add(verticalRibbon); // Add to lid so it moves with it
+
+        // Horizontal ribbon
+        const horizontalRibbonGeometry = new THREE.BoxGeometry(0.5, 0.45, 2.15);
+        const horizontalRibbon = new THREE.Mesh(horizontalRibbonGeometry, ribbonMaterial);
+        lid.add(horizontalRibbon); // Add to lid so it moves with it
+
+        // Bow on top
+        const bowKnotGeometry = new THREE.SphereGeometry(0.2, 16, 16);
+        const bowKnot = new THREE.Mesh(bowKnotGeometry, ribbonMaterial);
+        bowKnot.position.y = 0.2;
+        lid.add(bowKnot);
+
+        const createBowLoop = (rotation) => {
+            const shape = new THREE.Shape();
+            shape.moveTo(0, 0);
+            shape.absarc(0.2, 0, 0.4, Math.PI, 0, false);
+            shape.absarc(-0.2, 0, 0.4, Math.PI, 0, false);
+            const extrudeSettings = { depth: 0.1, bevelEnabled: false };
+            const geometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+            const mesh = new THREE.Mesh(geometry, ribbonMaterial);
+            mesh.rotation.y = rotation;
+            mesh.position.y = 0.2;
+            return mesh;
+        }
+        const bowLoop1 = createBowLoop(Math.PI / 4);
+        const bowLoop2 = createBowLoop(-Math.PI / 4);
+        lid.add(bowLoop1, bowLoop2);
+
+
+        // --- Interaction Logic ---
+        let isLidOpen = false;
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
+        
+        const letterContainer = document.getElementById('letter-container');
+        const instruction = document.getElementById('instruction');
+
+        function openLid() {
+            if (isLidOpen) return;
+            isLidOpen = true;
+            instruction.style.opacity = '0';
+
+            // Lid open animation
+            let openAngle = 0;
+            const animateOpen = () => {
+                openAngle += 0.05;
+                lid.position.y = 1.2 + Math.sin(openAngle) * 2;
+                lid.rotation.x = -openAngle * 1.5;
+                if (openAngle < Math.PI / 2) {
+                    requestAnimationFrame(animateOpen);
+                } else {
+                    // Show the letter after animation
+                    setTimeout(() => {
+                        letterContainer.classList.remove('letter-hidden');
+                        letterContainer.classList.add('letter-visible');
+                    }, 300);
+                }
+            };
+            animateOpen();
+        }
+
+        // Close button functionality
+        document.getElementById('close-letter').addEventListener('click', () => {
+            letterContainer.classList.remove('letter-visible');
+            letterContainer.classList.add('letter-hidden');
+        });
+
+        // Mouse/Touch controls for rotation
+        let isDragging = false;
+        let previousMousePosition = { x: 0, y: 0 };
+
+        const onPointerDown = (event) => {
+            isDragging = true;
+            canvasContainer.style.cursor = 'grabbing';
+            previousMousePosition.x = event.clientX || event.touches[0].clientX;
+            previousMousePosition.y = event.clientY || event.touches[0].clientY;
+
+            // Check for lid click on pointer down
+            mouse.x = ( (event.clientX || event.touches[0].clientX) / window.innerWidth ) * 2 - 1;
+            mouse.y = - ( (event.clientY || event.touches[0].clientY) / window.innerHeight ) * 2 + 1;
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(lid.children, true);
+            const intersectsLid = raycaster.intersectObject(lid);
+
+            if (intersects.length > 0 || intersectsLid.length > 0) {
+                 // Prioritize opening over dragging if lid is clicked
+                openLid();
+                isDragging = false; // Prevent dragging when opening
+            }
+        };
+
+        const onPointerMove = (event) => {
+            if (!isDragging) return;
+
+            const clientX = event.clientX || event.touches[0].clientX;
+            const clientY = event.clientY || event.touches[0].clientY;
+            
+            const deltaMove = {
+                x: clientX - previousMousePosition.x,
+                y: clientY - previousMousePosition.y
+            };
+
+            giftGroup.rotation.y += deltaMove.x * 0.01;
+            giftGroup.rotation.x += deltaMove.y * 0.01;
+            
+            previousMousePosition = { x: clientX, y: clientY };
+        };
+
+        const onPointerUp = () => {
+            isDragging = false;
+            canvasContainer.style.cursor = 'grab';
+        };
+
+        canvasContainer.addEventListener('mousedown', onPointerDown);
+        canvasContainer.addEventListener('mousemove', onPointerMove);
+        canvasContainer.addEventListener('mouseup', onPointerUp);
+        canvasContainer.addEventListener('mouseleave', onPointerUp); // Stop dragging if mouse leaves
+        
+        canvasContainer.addEventListener('touchstart', onPointerDown, { passive: false });
+        canvasContainer.addEventListener('touchmove', onPointerMove, { passive: false });
+        canvasContainer.addEventListener('touchend', onPointerUp);
+
+
+        // --- Window Resize ---
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // --- Animation Loop ---
+        function animate() {
+            requestAnimationFrame(animate);
+            if (!isDragging && !isLidOpen) {
+                giftGroup.rotation.y += 0.003;
+            }
+            renderer.render(scene, camera);
+        }
+
+        animate();
+    </script>
 </body>
 </html>
